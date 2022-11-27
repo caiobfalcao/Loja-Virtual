@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h1>Categorias</h1>
+<h3><a href="/produtos">Todas as categorias</a></h3>
+{% for categoria in lista_categorias %}
+<h3><a href="{{ categoria.get_absolute_url }}">{{ categoria.nome }}</a></h3>
+{% endfor %}
+
+<h1>Produtos</h1>
+{% for produto in lista_produtos %}
+    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+    <h3><a href="{{ produto.get_absolute_url }}">{{ produto.nome }}</a>&nbspR${{ produto.preco }}</h3>
+{% endfor %}
+{% endblock conteudo %}

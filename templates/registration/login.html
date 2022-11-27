@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<form method="post">
+    {% csrf_token %}
+    <h1>Informe seus Dados</h1>
+
+        <label>Usuário:</label>
+        <input type="text" id="username" name="username" placeholder="Informe seu Usuário: " required autofocus>
+        <label>Senha:</label>
+        <input type="password" id="password" name="password" placeholder="Informe sua Senha: " required>
+
+        <button type="submit">Entrar</button>
+        <p>&copy; {% now 'Y'%}</p>
+</form>
+{% endblock conteudo %}
